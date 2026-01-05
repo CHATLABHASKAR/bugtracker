@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f3f4f6;
+        /* Light gray background */
+        color: #1f2937;
+        /* Dark gray text */
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5;
+    }
+
+    .glass-panel {
+        @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+    }
+
+    .card-hover {
+        @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    }
+}
+
+@layer utilities {
+    .animate-fade-in-down {
+        animation: fadeInDown 0.5s ease-out;
+    }
+
+    .animate-fade-in-right {
+        animation: fadeInRight 0.5s ease-out;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
